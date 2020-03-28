@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>CMD TEST</title>
+        <script src="sea-modules/seajs/sea-debug.js"></script>
+    </head>
+    <body>
+        <div id="container"></div>
+        <script>
+            // jquery 不能直接拿来用，要转为seajs模块
+            seajs.config({
+                base: "./sea-modules/",
+                alias: {
+                    "jquery": "jquery/1.10.1/jquery-debug.js"
+                }
+            })
+            seajs.use(['jquery',"./script/main"],function($, main) {
+                console.log($);
+            })
+        </script>
+    </body>
+</html>
